@@ -17,7 +17,7 @@ export const deeplpro = <TranslateTaskProcessor>async function (data) {
 async function deepl(url: string, data: Required<TranslateTask>) {
   const secret: string = data.secret;
   const [key, glossary_id]: string[] = secret.split("#");
-  var reqBody = `auth_key=${key}&text=${encodeURIComponent(
+  let reqBody = `auth_key=${key}&text=${encodeURIComponent(
     data.raw,
   )}&source_lang=${data.langfrom
     .split("-")[0]
